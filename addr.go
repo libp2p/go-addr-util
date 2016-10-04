@@ -1,9 +1,9 @@
 package addrutil
 
 import (
+	"context"
 	"fmt"
 
-	"context"
 	logging "github.com/ipfs/go-log"
 	ma "github.com/jbenet/go-multiaddr"
 	manet "github.com/jbenet/go-multiaddr-net"
@@ -11,7 +11,7 @@ import (
 	_ "github.com/whyrusleeping/ws-transport"
 )
 
-var log = logging.Logger("github.com/libp2p/go-libp2p/p2p/net/swarm/addr")
+var log = logging.Logger("addrutil")
 
 // SupportedTransportStrings is the list of supported transports for the swarm.
 // These are strings of encapsulated multiaddr protocols. E.g.:
