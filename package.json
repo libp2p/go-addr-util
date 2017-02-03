@@ -26,7 +26,7 @@
     },
     {
       "author": "whyrusleeping",
-      "hash": "QmeHbitozRtLYuPrtpcAoJFJixZzTctPtkSsBQGSQuz8pG",
+      "hash": "QmV8M3wvt18XU9jyWCi5KVWMb7QFmsieco1ZP1RzNbJ9Fz",
       "name": "ws-transport",
       "version": "1.4.1"
     }
@@ -36,6 +36,6 @@
   "license": "",
   "name": "go-addr-util",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "1.1.2"
+  "version": "1.1.3"
 }
 
