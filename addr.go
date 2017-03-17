@@ -21,6 +21,8 @@ var SupportedTransportStrings = []string{
 	"/ip6/tcp",
 	"/ip4/udp/utp",
 	"/ip6/udp/utp",
+	"/ip4/udp/quic",
+	"/ip6/udp/quic",
 	"/ip4/tcp/ws",
 	"/ip6/tcp/ws",
 	// "/ip4/udp/udt", disabled because the lib doesnt work on arm
