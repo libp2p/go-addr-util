@@ -1,7 +1,7 @@
 {
   "author": "whyrusleeping",
   "bugs": {
-    "url": "https://github.com/libp2p/go-addr-util"
+    "url": "https://github.com/libp2p/go-addr-util/issues"
   },
   "gx": {
     "dvcsimport": "github.com/libp2p/go-addr-util"
@@ -33,7 +33,7 @@
   ],
   "gxVersion": "0.9.1",
   "language": "go",
-  "license": "",
+  "license": "MIT",
   "name": "go-addr-util",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
   "version": "1.1.5"
