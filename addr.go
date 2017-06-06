@@ -8,7 +8,7 @@ import (
 	ma "github.com/multiformats/go-multiaddr"
 	manet "github.com/multiformats/go-multiaddr-net"
 
-	_ "github.com/whyrusleeping/ws-transport"
+	_ "github.com/libp2p/go-ws-transport"
 )
 
 var log = logging.Logger("addrutil")
