@@ -44,6 +44,18 @@ func init() {
 	SupportedTransportProtocols = transports
 }
 
+// AddTransport adds a transport protocol combination to the list of supported transports
+func AddTransport(s string) error {
+	t, err := ma.ProtocolsWithString(s)
+	if err != nil {
+		return err
+	}
+
+	SupportedTransportStrings = append(SupportedTransportStrings, s)
+	SupportedTransportProtocols = append(SupportedTransportProtocols, t)
+	return nil
+}
+
 // FilterAddrs is a filter that removes certain addresses, according the given filters.
 // if all filters return true, the address is kept.
 func FilterAddrs(a []ma.Multiaddr, filters ...func(ma.Multiaddr) bool) []ma.Multiaddr {
