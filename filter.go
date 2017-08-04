@@ -20,6 +20,11 @@ func SubtractFilter(addrs ...ma.Multiaddr) func(ma.Multiaddr) bool {
 // IsFDCostlyTransport returns true for transports that require a new file
 // descriptor per connection created
 func IsFDCostlyTransport(a ma.Multiaddr) bool {
+	mas := ma.Split(a)
+	if len(mas) < 2 {
+		return false
+	}
+	a = mas[0].Encapsulate(mas[1])
 	return mafmt.TCP.Matches(a)
 }
 
