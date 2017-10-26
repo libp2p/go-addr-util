@@ -26,9 +26,9 @@
     },
     {
       "author": "whyrusleeping",
-      "hash": "QmdicniYXy49AFCSVTZeYmo997kT5XJRzZLokzJCrywR2U",
+      "hash": "QmUE6HHybkvTDUkP6gHx41XNHsyZDwxCmxiD2fJABsg9eZ",
       "name": "go-ws-transport",
-      "version": "1.6.1"
+      "version": "1.6.2"
     },
     {
       "author": "multiformats",
@@ -42,6 +42,6 @@
   "license": "MIT",
   "name": "go-addr-util",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "1.2.2"
+  "version": "1.2.3"
 }
 
