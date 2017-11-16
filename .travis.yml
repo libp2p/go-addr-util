@@ -5,7 +5,7 @@ os:
 language: go
 
 go:
-    - 1.8
+    - 1.9.x
 
 install: true
 
@@ -13,11 +13,12 @@ before_install:
   - make deps
 
 script:
-  - go vet
-  - go test -v -race -coverprofile=coverage.txt -covermode=atomic .
+  - go vet ./...
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then go test -v -race -coverprofile=coverage.txt -covermode=atomic .;
+    else go test -v -race .; fi
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash <(curl -s https://codecov.io/bash); fi
 
 cache:
     directories:
