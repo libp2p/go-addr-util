@@ -13,12 +13,7 @@ before_install:
   - make deps
 
 script:
-  - go vet ./...
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then go test -v -race -coverprofile=coverage.txt -covermode=atomic .;
-    else go test -v -race .; fi
-
-after_success:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash <(curl -s https://codecov.io/bash); fi
+  - bash <(curl -s https://raw.githubusercontent.com/ipfs/ci-helpers/master/travis-ci/run-standard-tests.sh)
 
 cache:
     directories:
@@ -26,3 +21,5 @@ cache:
 
 notifications:
   email: false
+
+env: GOTFLAGS="-race"
