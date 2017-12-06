@@ -7,7 +7,7 @@ import (
 
 // SubtractFilter returns a filter func that filters all of the given addresses
 func SubtractFilter(addrs ...ma.Multiaddr) func(ma.Multiaddr) bool {
-	addrmap := make(map[string]bool)
+	addrmap := make(map[string]bool, len(addrs))
 	for _, a := range addrs {
 		addrmap[string(a.Bytes())] = true
 	}
