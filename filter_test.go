@@ -3,6 +3,7 @@ package addrutil
 import (
 	"testing"
 
+	_ "github.com/libp2p/go-ws-transport"
 	ma "github.com/multiformats/go-multiaddr"
 )
 
