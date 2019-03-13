@@ -3,7 +3,6 @@ package addrutil
 import (
 	"testing"
 
-	_ "github.com/libp2p/go-ws-transport"
 	ma "github.com/multiformats/go-multiaddr"
 )
 
@@ -46,8 +45,8 @@ func TestIsFDCostly(t *testing.T) {
 		newMultiaddr(t, "/ip6/::/tcp/1234"),
 		newMultiaddr(t, "/ip6/fe80::1/tcp/1234"),
 		newMultiaddr(t, "/ip6/fe80::/tcp/1234"),
-		newMultiaddr(t, "/ip6/fe80::/tcp/1234/ws"),
-		newMultiaddr(t, "/ip4/127.0.0.1/tcp/1234/ws"),
+		newMultiaddr(t, "/ip6/fe80::/tcp/1234/http"),
+		newMultiaddr(t, "/ip4/127.0.0.1/tcp/1234/http"),
 	}
 
 	bad := []ma.Multiaddr{
