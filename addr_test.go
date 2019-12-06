@@ -19,7 +19,6 @@ func TestFilterAddrs(t *testing.T) {
 	bad := []ma.Multiaddr{
 		newMultiaddr(t, "/ip6/fe80::1/tcp/1234"),   // link local
 		newMultiaddr(t, "/ip6/fe80::100/tcp/1234"), // link local
-		newMultiaddr(t, ""),
 	}
 
 	good := []ma.Multiaddr{
