@@ -6,4 +6,4 @@ require (
 	github.com/multiformats/go-multiaddr-net v0.1.2
 )
 
-go 1.13
+go 1.15
