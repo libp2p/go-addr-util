@@ -2,7 +2,7 @@ package addrutil
 
 import (
 	ma "github.com/multiformats/go-multiaddr"
-	manet "github.com/multiformats/go-multiaddr-net"
+	manet "github.com/multiformats/go-multiaddr/net"
 	"testing"
 )
 
