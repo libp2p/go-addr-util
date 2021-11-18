@@ -13,9 +13,11 @@ go-addr-util
 
 ## Table of Contents
 
-- [Install](#install)
-- [Contribute](#contribute)
-- [License](#license)
+- [go-addr-util](#go-addr-util)
+  - [Table of Contents](#table-of-contents)
+  - [Install](#install)
+  - [Contribute](#contribute)
+  - [License](#license)
 
 ## Install
 
@@ -26,6 +28,24 @@ make install
 ## Contribute
 
 Feel free to join in. All welcome. Open an [issue](https://github.com/ipfs/go-addr-util/issues)!
+
+To do so:
+
+- First, fork the repo into your own repository. Do this with the following command://
+
+```bash
+gh repo fork libp2p/go-addr-util --remote true --org USERNAME
+gh repo clone USERNAME/go-addr-util
+```
+
+- Next, run the local tests, to ensure everything is working properly.
+
+```bash
+go test -v -coverprofile module-coverage.txt ./...
+```
+
+- Finally, make your changes. After you're done, upload your changes to the repo, and execute a pull request to the original repository.
+
 
 Check out our [contributing document](https://github.com/libp2p/community/blob/master/CONTRIBUTE.md) for more information on how we work, and about contributing in general. Please be aware that all interactions related to libp2p are subject to the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
 
@@ -38,3 +58,4 @@ Small note: If editing the Readme, please conform to the [standard-readme](https
 ---
 
 The last gx published version of this module was: 2.0.11: QmZomXpA4HrYKRV2ftnE5odWMT2JNnhAXTvEyQrzXrnyEX
+
