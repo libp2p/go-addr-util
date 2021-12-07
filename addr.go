@@ -1,7 +1,6 @@
 package addrutil
 
 import (
-	"context"
 	"fmt"
 
 	logging "github.com/ipfs/go-log"
@@ -97,14 +96,6 @@ func ResolveUnspecifiedAddresses(unspecAddrs, ifaceAddrs []ma.Multiaddr) ([]ma.M
 	if len(outputAddrs) < 1 {
 		return nil, fmt.Errorf("failed to specify addrs: %s", unspecAddrs)
 	}
-
-	log.Event(context.TODO(), "interfaceListenAddresses", func() logging.Loggable {
-		var addrs []string
-		for _, addr := range outputAddrs {
-			addrs = append(addrs, addr.String())
-		}
-		return logging.Metadata{"addresses": addrs}
-	}())
 
 	log.Debug("ResolveUnspecifiedAddresses:", unspecAddrs, ifaceAddrs, outputAddrs)
 	return outputAddrs, nil
