@@ -137,45 +137,6 @@ func TestResolvingAddrs(t *testing.T) {
 
 }
 
-func TestWANShareable(t *testing.T) {
-
-	wanok := []ma.Multiaddr{
-		newMultiaddr(t, "/ip4/1.2.3.4/tcp/1234"),
-		newMultiaddr(t, "/ip6/abcd::1/tcp/1234"),
-	}
-
-	wanbad := []ma.Multiaddr{
-		newMultiaddr(t, "/ip4/127.0.0.1/tcp/1234"),
-		newMultiaddr(t, "/ip4/0.0.0.0/tcp/1234"),
-		newMultiaddr(t, "/ip6/::1/tcp/1234"),
-		newMultiaddr(t, "/ip6/::/tcp/1234"),
-		newMultiaddr(t, "/ip6/fe80::1/tcp/1234"),
-		newMultiaddr(t, "/ip6/fe80::/tcp/1234"),
-	}
-
-	for _, a := range wanok {
-		if !AddrIsShareableOnWAN(a) {
-			t.Error("should be true", a)
-		}
-	}
-
-	for _, a := range wanbad {
-		if AddrIsShareableOnWAN(a) {
-			t.Error("should be false", a)
-		}
-	}
-
-	wanok2 := WANShareableAddrs(wanok)
-	if len(wanok) != len(wanok2) {
-		t.Error("should be the same")
-	}
-
-	wanbad2 := WANShareableAddrs(wanbad)
-	if len(wanbad2) != 0 {
-		t.Error("should be zero")
-	}
-}
-
 func TestSubtract(t *testing.T) {
 
 	a := []ma.Multiaddr{
