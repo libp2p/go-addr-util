@@ -166,23 +166,3 @@ func Subtract(a, b []ma.Multiaddr) []ma.Multiaddr {
 		return true
 	})
 }
-
-// CheckNATWarning checks if our observed addresses differ. if so,
-// informs the user that certain things might not work yet
-func CheckNATWarning(observed, expected ma.Multiaddr, listen []ma.Multiaddr) {
-	if observed.Equal(expected) {
-		return
-	}
-
-	if !AddrInList(observed, listen) { // probably a nat
-		log.Warningf(natWarning, observed, listen)
-	}
-}
-
-const natWarning = `Remote peer observed our address to be: %s
-The local addresses are: %s
-Thus, connection is going through NAT, and other connections may fail.
-
-IPFS NAT traversal is still under development. Please bug us on github or irc to fix this.
-Baby steps: http://jbenet.static.s3.amazonaws.com/271dfcf/baby-steps.gif
-`

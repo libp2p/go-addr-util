@@ -223,12 +223,3 @@ func TestAddrInList(t *testing.T) {
 		t.Errorf("Expected address %s to be in list", "/ip4/0.0.0.0/tcp/1234")
 	}
 }
-
-func TestCheckNATWarning(t *testing.T) {
-	multiAddr := newMultiaddr(t, "/ip4/0.0.0.0/tcp/1234")
-	listen := []ma.Multiaddr{
-		multiAddr,
-	}
-	CheckNATWarning(multiAddr, multiAddr, listen)
-	CheckNATWarning(newMultiaddr(t, "/ip6/fe80::/tcp/1234"), multiAddr, listen)
-}
