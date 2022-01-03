@@ -1,3 +1,4 @@
+// Deprecated: Most of the functions were moved to github.com/multiformats/go-multiaddr.
 package addrutil
 
 import (
