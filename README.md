@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+
+Most of the functions were moved to [github.com/multiformats/go-multiaddr](https://github.com/multiformats/go-multiaddr).
+
 go-addr-util
 ==================
 
