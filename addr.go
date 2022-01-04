@@ -137,25 +137,6 @@ func AddrInList(addr ma.Multiaddr, list []ma.Multiaddr) bool {
 	return false
 }
 
-// AddrIsShareableOnWAN returns whether the given address should be shareable on the
-// wide area network (wide internet).
-func AddrIsShareableOnWAN(addr ma.Multiaddr) bool {
-	s := ma.Split(addr)
-	if len(s) < 1 {
-		return false
-	}
-	a := s[0]
-	if manet.IsIPLoopback(a) || manet.IsIP6LinkLocal(a) || manet.IsIPUnspecified(a) {
-		return false
-	}
-	return manet.IsThinWaist(a)
-}
-
-// WANShareableAddrs filters addresses based on whether they're shareable on WAN
-func WANShareableAddrs(inp []ma.Multiaddr) []ma.Multiaddr {
-	return FilterAddrs(inp, AddrIsShareableOnWAN)
-}
-
 // Subtract filters out all addrs in b from a
 func Subtract(a, b []ma.Multiaddr) []ma.Multiaddr {
 	return FilterAddrs(a, func(m ma.Multiaddr) bool {
